@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustapha_Ishmael_CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --gold: #fbbf24;
+            --dark: #121212;
+            --gray: #4b5563;
+            --light-gray: #f3f4f6;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.5; 
+            color: #333;
+            background: #f0f0f0; 
+            padding: 40px;
+        }
+
+        /* Paper Size Setup for Printing */
+        .cv-page {
+            background: white;
+            width: 210mm; /* A4 Width */
+            min-height: 297mm; /* A4 Height */
+            margin: 0 auto;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            border-bottom: 3px solid var(--dark);
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .header-left h1 { font-size: 28pt; color: var(--dark); letter-spacing: -1px; }
+        .header-left p { color: var(--gold); font-weight: bold; font-size: 14pt; }
+        
+        .header-right { text-align: right; font-size: 9pt; color: var(--gray); }
+        .header-right i { color: var(--dark); width: 15px; }
+
+        section { margin-bottom: 20px; }
+        h2 { 
+            font-size: 14pt; 
+            text-transform: uppercase; 
+            background: var(--dark); 
+            color: white; 
+            padding: 4px 10px; 
+            display: inline-block; 
+            margin-bottom: 12px;
+        }
+
+        .job-title { display: flex; justify-content: space-between; font-weight: bold; color: #000; }
+        .company { color: var(--gold); font-weight: 600; margin-bottom: 5px; }
+        .desc { font-size: 10pt; margin-bottom: 10px; color: #444; }
+        
+        ul { margin-left: 18px; font-size: 10pt; color: #555; }
+        li { margin-bottom: 4px; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            font-size: 10pt;
+        }
+        .skill-item b { color: var(--dark); }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .cv-page { box-shadow: none; margin: 0; }
+            button { display: none; } /* Hide print button on PDF */
+        }
+        
+        .print-btn {
+            position: fixed; top: 20px; right: 20px;
+            padding: 10px 20px; background: var(--gold);
+            border: none; cursor: pointer; font-weight: bold; border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">Save as PDF</button>
+
+    <div class="cv-page">
+        <header>
+            <div class="header-left">
+                <h1>ISHMAEL MUSTAPHA</h1>
+                <p>Software Developer & Future Cloud Engineer</p>
+            </div>
+            <div class="header-right">
+                <div><i class="fas fa-envelope"></i> mustaphaishmael255@gmail.com</div>
+                <div><i class="fas fa-location-dot"></i> Kumasi, Ghana</div>
+                <div><i class="fab fa-github"></i> github.com/vroy-dev</div>
+                <div><i class="fas fa-globe"></i> vroy-portfolio.com</div>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="desc">Highly motivated Full-Stack Developer and IT student at KNUST with a proven track record of building robust web applications and secure payment integrations. Specialized in PHP, JavaScript, and SQL, with a strong focus on cloud-native development. Actively preparing for Google Cloud Associate Engineer certification.</p>
+        </section>
+
+        <section>
+            <h2>Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><b>Languages:</b> PHP, JS, Python, SQL, C#</div>
+                <div class="skill-item"><b>Tools:</b> Git, GitHub, Paystack API</div>
+                <div class="skill-item"><b>Cloud:</b> Google Cloud (Preparing)</div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Engineering Projects</h2>
+            <div class="job-title"><span>VroyHostel (Booking Aggregator)</span> <span>2026</span></div>
+            <div class="company">Full-Stack Developer</div>
+            <ul>
+                <li>Architected a multi-portal system for students, landlords, and admins.</li>
+                <li>Integrated Paystack API for seamless, secure financial transactions.</li>
+                <li>Built a responsive UI and managed complex MySQL database schemas.</li>
+            </ul>
+
+            <div style="margin-top: 15px;" class="job-title"><span>Brunei Tickets</span> <span>2025</span></div>
+            <div class="company">Lead Developer</div>
+            <ul>
+                <li>Developed a digital ticketing platform with real-time inventory management.</li>
+                <li>Implemented dynamic QR-code generation for secure attendee verification.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="job-title"><span>BSc. Information Technology</span> <span>2026 — 2029</span></div>
+            <div class="company">Kwame Nkrumah University of Science and Technology (KNUST)</div>
+            
+            <div style="margin-top: 10px;" class="job-title"><span>Diploma in Software Engineering</span> <span>Completed 2025</span></div>
+            <div class="company">IPMC Ghana</div>
+        </section>
+
+        <section>
+            <h2>Academic Interests</h2>
+            <p class="desc"><b>Mathematics:</b> Advanced Calculus (Limits & Differentiation). <br> <b>Sports Analytics:</b> Exploring data applications in football (FC Barcelona fan).</p>
+        </section>
+    </div>
+
+</body>
+</html>
