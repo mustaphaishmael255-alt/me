@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Developer Application – Mustapha Ishmael</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            min-height: 100vh;
+            color: #1a202c;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 30px;
+            position: relative;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+            animation: shimmer 2s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 0;
+        }
+        
+        .header p {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 8px;
+        }
+        
+        .content {
+            padding: 40px 50px;
+            background: white;
+        }
+        
+        .content p {
+            margin-bottom: 24px;
+            font-size: 1.05rem;
+            color: #374151;
+            text-align: justify;
+        }
+        
+        .content p:first-child {
+            font-weight: 600;
+            color: #1a202c;
+        }
+        
+        .projects {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 4px solid #fbbf24;
+        }
+        
+        .projects h3 {
+            color: #fbbf24;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        ul {
+            margin: 20px 0;
+            list-style: none;
+        }
+        
+        li {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid #fbbf24;
+            transition: transform 0.2s ease;
+        }
+        
+        li:hover {
+            transform: translateX(5px);
+        }
+        
+        strong {
+            color: #fbbf24;
+            font-weight: 600;
+        }
+        
+        .signature {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 12px;
+            text-align: center;
+        }
+        
+        .signature p {
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+        
+        .signature .name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            font-size: 0.9rem;
+            color: #6b7280;
+            line-height: 1.6;
+        }
+        
+        .contact-info a {
+            color: #fbbf24;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .contact-info a:hover {
+            color: #f59e0b;
+            text-decoration: underline;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 20px;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            .header {
+                background: #fbbf24 !important;
+            }
+            .header::after {
+                display: none;
+            }
+            .projects {
+                background: #f8fafc !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+            .content {
+                padding: 30px 25px;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .projects {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Software Developer Application</h1>
+            <h2>Mustapha Ishmael</h2>
+            <p>Software Developer & Future Cloud Engineer</p>
+        </div>
+        
+        <div class="content">
+            <p>Hi Engineering Team,</p>
+            
+            <p>I am writing to express my interest in joining your team as a Software Developer. As a full-stack engineer operating with a strict remote-first mindset, I specialize in taking ambitious ideas and engineering them into scalable, production-ready platforms.</p>
+            
+            <p>With a strong foundation in Software Engineering and currently advancing my IT degree at Kwame Nkrumah University of Science and Technology, my technical core revolves around PHP, modern JavaScript, Python, and SQL. I don't just write code.I take full ownership of the development lifecycle, from database architecture to frontend UI.</p>
+            
+            <p>I thrive in asynchronous, remote environments where clean documentation and structured version control are essential. Recently, I have architected and launched several end-to-end platforms:</p>
+            
+            <div class="projects">
+                <h3>Featured Projects</h3>
+                <ul>
+                    <li><strong>VroyHostel</strong>: Built a comprehensive multi-portal booking aggregator featuring separate student and landlord dashboards, an admin panel, and secure live payment integration via Paystack API.</li>
+                    <li><strong>Brunei Tickets</strong>: Developed a digital event platform allowing planners to sell tickets and seamlessly verify attendees on-site using dynamic QR codes.</li>
+                    <li><strong>Afro Tea Web Platform</strong>: Engineered a responsive, mobile-first brand landing page implementing custom modern UI principles.</li>
+                </ul>
+            </div>
+            
+            <p>I am also actively expanding my expertise into cloud infrastructure, currently preparing for my Google Cloud Associate Engineer certification, to ensure that applications I build are highly scalable.</p>
+            
+            <p>You can explore my live projects, responsive design work, and source code directly on my portfolio: mustaphaishmael255-alt.github.io/me/</p>
+            
+            <p>I would love to jump on a brief call to discuss how my technical stack and independent drive align with your team's upcoming projects.</p>
+            
+            <div class="signature">
+                <p class="name">Best regards,</p>
+                <p class="name">Mustapha Ishmael</p>
+                <div class="contact-info">
+                    <p>📧 mustaphaishmael255@gmail.com</p>
+                    <p>🌐 <a href="https://mustaphaishmael255-alt.github.io/me/" target="_blank">mustaphaishmael255-alt.github.io/me/</a></p>
+                    <p>💼 <a href="https://linkedin.com/in/ishmael-mustapha-99a923378/" target="_blank">LinkedIn Profile</a></p>
+                    <p>🐙 <a href="https://github.com/mustaphaishmael255-alt" target="_blank">GitHub</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
