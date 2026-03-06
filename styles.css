@@ -1061,6 +1061,53 @@ body {
     justify-content: center;
 }
 
+/* EmailJS Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 16px 20px;
+    z-index: 10000;
+    transform: translateX(400px);
+    transition: transform 0.3s ease;
+    max-width: 350px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification.success {
+    border-left: 4px solid #10b981;
+}
+
+.notification.success i {
+    color: #10b981;
+}
+
+.notification.error {
+    border-left: 4px solid #ef4444;
+}
+
+.notification.error i {
+    color: #ef4444;
+}
+
+.notification span {
+    font-size: 14px;
+    color: #374151;
+    font-weight: 500;
+}
+
 /* --- Premium Timeline --- */
 .timeline {
     position: relative;

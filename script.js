@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize EmailJS
+    (function() {
+        emailjs.init("GFn0FaPdvV9wU85_T"); // Replace with your EmailJS public key
+    })();
+
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.section');
 
@@ -54,6 +59,91 @@ document.addEventListener('DOMContentLoaded', () => {
     if (aboutSection && aboutLink) {
         aboutSection.classList.add('active');
         aboutLink.classList.add('active');
+    }
+
+    // Handle contact form submission with EmailJS
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            
+            // Send email using EmailJS
+            emailjs.send('service_1iridbm', 'template_9zf6ira', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Show success message
+                    showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Show error message
+                    showNotification('Failed to send message. Please try again.', 'error');
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
+
+    // Function to show notifications
+    function showNotification(message, type) {
+        // Remove any existing notifications
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+            existingNotification.remove();
+        }
+        
+        // Create notification element
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+            <div class="notification-content">
+                <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                <span>${message}</span>
+            </div>
+        `;
+        
+        // Add to page
+        document.body.appendChild(notification);
+        
+        // Show notification
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+        
+        // Hide after 5 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
+            }, 300);
+        }, 5000);
     }
 
     // Handle pending demo clicks
